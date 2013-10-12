@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # quickswitch for i3 - quickly change to and locate windows in i3.
 #
@@ -122,6 +122,8 @@ def create_lookup_table(windows):
         if name.startswith("i3bar for output"):
             # this is an i3bar, ignore it.
             continue
+        while name in lookup:
+            name = name + ' '
         lookup[name] = id_
     return lookup
 
